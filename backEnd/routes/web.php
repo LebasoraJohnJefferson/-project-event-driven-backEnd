@@ -13,6 +13,12 @@
 |
 */
 
+$router->get('/userAccounts','UserAccountController@index');
+$router->get('/userAccounts/{id}','UserAccountController@show');
+$router->post('/userAccounts/create','UserAccountController@store');
+$router->post('/userAccounts/update/{id}','UserAccountController@update');
+$router->delete('/userAccounts/delete/{id}','UserAccountController@destroy');
+
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
