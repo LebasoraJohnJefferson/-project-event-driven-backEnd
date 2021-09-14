@@ -20,7 +20,7 @@ class UserAccountController extends Controller
             'firstName'=>'required',
             'lastName'=>'required',
             'userName'=>'required',
-            'email'=>'required',
+            'email'=>'required|email|unique:user_accounts',
             'password'=>'required',
             'address'=>'required',
         ]);
@@ -49,7 +49,7 @@ class UserAccountController extends Controller
             'firstName'=>'required',
             'lastName'=>'required',
             'userName'=>'required',
-            'email'=>'required',
+            'email'=>'required|email|unique:user_accounts',
             'password'=>'required',
             'address'=>'required',
         ]);
