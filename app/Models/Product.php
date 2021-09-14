@@ -12,4 +12,5 @@ class Product extends Model
         'product_description',
         'product_price'
     ];
+    
 }
