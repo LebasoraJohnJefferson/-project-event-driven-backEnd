@@ -21,6 +21,7 @@ class CreateUserAccountsTable extends Migration
             $table->string('email');
             $table->string('password');
             $table->string('address');
+            $table->string('token')->nullable()->unique();
             $table->timestamps();
         });
     }

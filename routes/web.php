@@ -20,6 +20,7 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix' => 'api'], function () use ($router) {
   $router->get('userAccounts', ['uses' => 'UserAccountController@index']);
   $router->get('userAccounts/{id}', ['uses' => 'UserAccountController@show']);
+  $router->post('auth/login', ['uses' => 'UserAccountController@login']);
   $router->post('userAccounts', ['uses' => 'UserAccountController@store']);
   $router->put('userAccounts/{id}', ['uses' => 'UserAccountController@update']);
   $router->delete('userAccounts/{id}', ['uses' => 'UserAccountController@destroy']);
