@@ -18,18 +18,30 @@ $router->get('/', function () use ($router) {
 });
 
 $router->group(['prefix' => 'api'], function () use ($router) {
+
+  $router->post('auth/register', 'AuthController@register');
+  $router->post('auth/login', 'AuthController@login');
+
+  $router->get('profile', 'UserController@profile');
+
+  // products
+  $router->get('product', 'ProductController@index');
+  $router->get('product/{id}', 'ProductController@show');
+
+  
+  $router->post('product', 'ProductController@store');
+  $router->put('product/{id}','ProductController@update');
+  $router->delete('product/{id}', 'ProductController@destroy');
+
+});
+
+
+$router->group(['prefix' => 'admin'], function () use ($router) {
   $router->get('userAccounts', ['uses' => 'UserAccountController@index']);
   $router->get('userAccounts/{id}', ['uses' => 'UserAccountController@show']);
-  $router->post('auth/login', ['uses' => 'UserAccountController@login']);
   $router->post('userAccounts', ['uses' => 'UserAccountController@store']);
   $router->put('userAccounts/{id}', ['uses' => 'UserAccountController@update']);
   $router->delete('userAccounts/{id}', ['uses' => 'UserAccountController@destroy']);
-
-  $router->get('product', ['uses' => 'ProductController@index']);
-  $router->get('product/{id}', ['uses' => 'ProductController@show']);
-  $router->post('product', ['uses' => 'ProductController@store']);
-  $router->put('product/{id}', ['uses' => 'ProductController@update']);
-  $router->delete('product/{id}', ['uses' => 'ProductController@destroy']);
 });
 
 
