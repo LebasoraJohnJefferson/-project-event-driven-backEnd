@@ -45,7 +45,7 @@ class AuthController extends Controller
     $this->validate($request, [
       'name' => 'required|string',
       'email' => 'required|email|unique:users',
-      'password' => 'required|confirmed',
+      'password' => 'required',
     ]);
 
     try {
@@ -58,7 +58,7 @@ class AuthController extends Controller
       $user->save();
 
       //return successful response
-      return response()->json(['user' => $user, 'message' => 'CREATED'], 201);
+      return response()->json(['user' => $user, 'message' => 'Account successfully created!'], 201);
 
     } catch (\Exception $e) {
       //return error message
