@@ -28,7 +28,9 @@ class ProductController extends Controller
         $this->validate($request, [
           'product_name' => 'required',
           'product_description' => 'required',
-          'product_price' => 'required'
+          'product_price' => 'required',
+          'product_quantity'=> 'required',
+          
         ]);
 
         $product = Product::create($request->all());
@@ -62,7 +64,8 @@ class ProductController extends Controller
         $this->validate($request, [
           'product_name' => 'required',
           'product_description' => 'required',
-          'product_price' => 'required'
+          'product_price' => 'required',
+          'product_quantity'=> 'required',
         ]);
 
         $product = Product::findOrFail($id);

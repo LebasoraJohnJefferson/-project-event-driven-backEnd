@@ -8,6 +8,7 @@ class Stores extends Model
 {
     //
     protected $fillable = [
+        'owner_id',
         'store_name',
         'store_description',
         'store_image',
