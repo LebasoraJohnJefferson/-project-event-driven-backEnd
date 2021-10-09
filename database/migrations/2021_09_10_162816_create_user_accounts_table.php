@@ -14,7 +14,7 @@ class CreateUserAccountsTable extends Migration
     public function up()
     {
         Schema::create('user_accounts', function (Blueprint $table) {
-            $table->id();
+            $table->id('user_id');
             $table->string('firstName');
             $table->string('lastName');
             $table->string('userName');
