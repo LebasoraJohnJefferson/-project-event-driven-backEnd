@@ -14,7 +14,7 @@ class CreateCustomerCartsTable extends Migration
     public function up()
     {
         Schema::create('customer_carts', function (Blueprint $table) {
-            $table->foreignId('customer_id')->references('user_id')->on('user_accounts');
+            $table->foreignId('customer_id')->references('id')->on('users');
             $table->foreignId('product_id')->references('product_id')->on('products');
             $table->float('quantity',8,2);
             $table->timestamps();
