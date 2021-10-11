@@ -21,6 +21,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 
   $router->post('auth/register', 'AuthController@register');
   $router->post('auth/login', 'AuthController@login');
+  $router->get('auth/logout','UserController@logout');
 
   $router->get('profile', 'UserController@profile');
 
@@ -32,6 +33,13 @@ $router->group(['prefix' => 'api'], function () use ($router) {
   $router->post('product', 'ProductController@store');
   $router->put('product/{id}','ProductController@update');
   $router->delete('product/{id}', 'ProductController@destroy');
+
+  //stores
+  $router->get('stores',['uses'=>'StoresController@index']);
+  $router->get('stores/{user_id}',['uses'=>'StoresController@findById']);
+  $router->post('stores/create',['uses'=>'StoresController@addStore']);
+  $router->put('stores/update/{id}',['uses'=>'StoresController@update']);
+  $router->delete('stores/delete/{id}',['uses'=>'StoresController@delete']);
 
 });
 

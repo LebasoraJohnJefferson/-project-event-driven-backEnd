@@ -13,4 +13,6 @@ class Stores extends Model
         'store_description',
         'store_image',
     ];
+
+    protected $primaryKey='store_id';
 }

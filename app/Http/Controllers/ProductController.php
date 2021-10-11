@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Facade\Auth;
 use App\Models\Product;
 
 class ProductController extends Controller
@@ -46,6 +47,7 @@ class ProductController extends Controller
     public function show($id)
     {
         //
+        Auth::show();
         return response()->json(Product::find($id));
     }
 
