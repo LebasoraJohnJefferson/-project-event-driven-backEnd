@@ -28,8 +28,6 @@ $router->group(['prefix' => 'api'], function () use ($router) {
   // products
   $router->get('product', 'ProductController@index');
   $router->get('product/{id}', 'ProductController@show');
-
-  
   $router->post('product', 'ProductController@store');
   $router->put('product/{id}','ProductController@update');
   $router->delete('product/{id}', 'ProductController@destroy');
